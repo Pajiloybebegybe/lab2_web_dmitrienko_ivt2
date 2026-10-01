@@ -1,0 +1,140 @@
+/* --- Пункт 5.1: Трансформация (увеличение при наведении) --- */
+.hover-scale {
+    transition: transform 0.4s ease-in-out;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* --- Пункт 5.2: Поворот элемента при наведении --- */
+.hover-rotate {
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.hover-rotate:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* --- Базовые стили --- */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.jumbotron {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+    border-radius: 0;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* --- Кнопка "Записаться онлайн" --- */
+.btn-warning {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-warning:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* ============================================ */
+/* 🌀 SVG-ТУРБИНА (корпус + вращающиеся лопатки) */
+/* ============================================ */
+
+.turbine-svg {
+    width: 40px;
+    height: 40px;
+    color: #ffc107;              /* Основной цвет — жёлтый акцент */
+    display: inline-block;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+/* Уменьшенная версия для подвала */
+.turbine-svg-sm {
+    width: 26px;
+    height: 26px;
+}
+
+/* Вращаем только лопатки, корпус остаётся на месте */
+.turbine-blades {
+    transform-origin: 50% 50%;
+    transform-box: view-box;      /* Точка вращения — центр SVG */
+    animation: turbineSpin 4s linear infinite;
+}
+
+/* При наведении на логотип — турбина раскручивается */
+.navbar-brand:hover .turbine-svg {
+    color: #ffffff;
+}
+.navbar-brand:hover .turbine-blades {
+    animation-duration: 0.7s;
+}
+
+/* Ключевые кадры вращения */
+@keyframes turbineSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* --- Галерея работ --- */
+.work-card {
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.work-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.work-card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+.work-card .card-body {
+    padding: 1rem;
+}
+.work-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+/* Плавное появление карточек галереи */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.work-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* --- Адаптивность (Усложнённое задание) --- */
+
+@media (max-width: 320px) {
+    .display-4 { font-size: 1.8rem; }
+    .jumbotron { padding: 2rem 1rem; }
+    .turbine-svg { width: 30px; height: 30px; }
+}
+
+@media (min-width: 768px) {
+    .display-4 { font-size: 3rem; }
+}
+
+@media (min-width: 1000px) {
+    .container { max-width: 960px; }
+}
+
+@media (min-width: 1280px) {
+    .container { max-width: 1140px; }
+}

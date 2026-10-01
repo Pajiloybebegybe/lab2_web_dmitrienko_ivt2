@@ -20,7 +20,7 @@ body {
 }
 
 .jumbotron {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), #343a40;
     border-radius: 0;
 }
 
@@ -32,13 +32,27 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
+/* --- Контраст текста (для Accessibility) --- */
+/* Bootstrap text-muted слишком светлый, делаем темнее для Lighthouse */
+.text-muted {
+    color: #495057 !important;
+}
+
+/* Текст на баннере — добавим лёгкую тень для контраста */
+.jumbotron .lead {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
 /* --- Кнопка "Записаться онлайн" --- */
 .btn-warning {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #1a1a1a; /* Более тёмный текст для контраста */
+    font-weight: 600;
 }
 .btn-warning:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+    color: #000;
 }
 
 /* ============================================ */
@@ -48,26 +62,23 @@ body {
 .turbine-svg {
     width: 40px;
     height: 40px;
-    color: #ffc107;              /* Основной цвет — жёлтый акцент */
+    color: #ffc107;
     display: inline-block;
     vertical-align: middle;
     transition: color 0.3s ease;
 }
 
-/* Уменьшенная версия для подвала */
 .turbine-svg-sm {
     width: 26px;
     height: 26px;
 }
 
-/* Вращаем только лопатки, корпус остаётся на месте */
 .turbine-blades {
     transform-origin: 50% 50%;
-    transform-box: view-box;      /* Точка вращения — центр SVG */
+    transform-box: view-box;
     animation: turbineSpin 4s linear infinite;
 }
 
-/* При наведении на логотип — турбина раскручивается */
 .navbar-brand:hover .turbine-svg {
     color: #ffffff;
 }
@@ -75,7 +86,6 @@ body {
     animation-duration: 0.7s;
 }
 
-/* Ключевые кадры вращения */
 @keyframes turbineSpin {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -119,7 +129,7 @@ body {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-/* --- Адаптивность (Усложнённое задание) --- */
+/* --- Адаптивность --- */
 
 @media (max-width: 320px) {
     .display-4 { font-size: 1.8rem; }

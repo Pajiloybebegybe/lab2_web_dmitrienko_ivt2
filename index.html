@@ -19,14 +19,11 @@
     <!-- Навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <!-- 🌀 SVG-турбина: корпус статичный, лопатки вращаются -->
-                <svg class="turbine-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Корпус (статичный) -->
+            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Турбо-Мастер — на главную">
+                <!-- SVG-турбина: корпус статичный, лопатки вращаются -->
+                <svg class="turbine-svg" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
                     <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
-
-                    <!-- Лопатки (вращаются) -->
                     <g class="turbine-blades">
                         <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
                         <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
@@ -37,14 +34,12 @@
                         <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
                         <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
                     </g>
-
-                    <!-- Центральная втулка (статичная) -->
                     <circle cx="50" cy="50" r="9" fill="currentColor"/>
                     <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
                 </svg>
                 <span class="ml-2">Турбо-Мастер</span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Открыть меню" aria-expanded="false" aria-controls="navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -75,7 +70,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 text-center shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Компьютерная диагностика</h5>
+                            <h3 class="card-title h5">Компьютерная диагностика</h3>
                             <p class="card-text">Полное сканирование всех систем автомобиля.</p>
                             <p class="font-weight-bold">от 1500 руб.</p>
                         </div>
@@ -84,7 +79,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 text-center shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Замена масла и фильтров</h5>
+                            <h3 class="card-title h5">Замена масла и фильтров</h3>
                             <p class="card-text">Быстрая замена с использованием оригинальных расходников.</p>
                             <p class="font-weight-bold">от 800 руб.</p>
                         </div>
@@ -93,7 +88,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 text-center shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Шиномонтаж</h5>
+                            <h3 class="card-title h5">Шиномонтаж</h3>
                             <p class="card-text">Сезонная смена шин, балансировка, ремонт проколов.</p>
                             <p class="font-weight-bold">от 2000 руб.</p>
                         </div>
@@ -110,27 +105,27 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card work-card h-100" data-toggle="modal" data-target="#workModal" data-img="img/engine.png">
-                        <img src="img/engine.png" alt="Ремонт двигателя" class="card-img-top hover-scale">
+                        <img src="img/engine.png" alt="Ремонт двигателя" loading="lazy" class="card-img-top hover-scale">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Ремонт двигателя</h5>
+                            <h3 class="card-title h5">Ремонт двигателя</h3>
                             <p class="card-text text-muted small">Капитальный и текущий ремонт ДВС любой сложности</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card work-card h-100" data-toggle="modal" data-target="#workModal" data-img="img/electric.png">
-                        <img src="img/electric.png" alt="Ремонт электрики" class="card-img-top hover-scale">
+                        <img src="img/electric.png" alt="Ремонт электрики" loading="lazy" class="card-img-top hover-scale">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Ремонт электрики</h5>
+                            <h3 class="card-title h5">Ремонт электрики</h3>
                             <p class="card-text text-muted small">Диагностика и восстановление бортовой сети автомобиля</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card work-card h-100" data-toggle="modal" data-target="#workModal" data-img="img/paint.png">
-                        <img src="img/paint.png" alt="Покраска авто" class="card-img-top hover-scale">
+                        <img src="img/paint.png" alt="Покраска авто" loading="lazy" class="card-img-top hover-scale">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Покраска авто</h5>
+                            <h3 class="card-title h5">Покраска авто</h3>
                             <p class="card-text text-muted small">Качественная покраска с подбором цвета по кузову</p>
                         </div>
                     </div>
@@ -140,11 +135,11 @@
     </section>
 
     <!-- Модальное окно (лайтбокс) -->
-    <div class="modal fade" id="workModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="workModal" tabindex="-1" role="dialog" aria-labelledby="workModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content bg-dark">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title text-white" id="workModalTitle">Просмотр работы</h5>
+                    <h3 class="modal-title h5 text-white" id="workModalTitle">Просмотр работы</h3>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Закрыть">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -190,7 +185,7 @@
     <!-- Подвал -->
     <footer class="bg-dark text-white text-center py-3">
         <p class="mb-0">
-            <svg class="turbine-svg turbine-svg-sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <svg class="turbine-svg turbine-svg-sm" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
                 <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
                 <g class="turbine-blades">

@@ -418,26 +418,29 @@ body {
 }
 
 /* ============================================ */
-/* 📱 АДАПТИВНОСТЬ                              */
-/* ============================================ */
-/* ============================================ */
-/* 📱 HERO — размеры заголовка под все экраны    */
+/* 📱 HERO — заголовок под все экраны           */
 /* ============================================ */
 
-/* База — мобильные (320–479px) */
+/* База — узкие телефоны (до 383px) */
 .display-4 {
-    font-size: 1.6rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.25;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
     hyphens: auto;
+    white-space: normal !important;
 }
 
 .jumbotron {
     padding: 2rem 1rem;
 }
 
-/* Чуть больше — планшеты (480–767px) */
+/* Твой Samsung S25+ и похожие (384–479px) */
+@media (min-width: 384px) {
+    .display-4 { font-size: 1.65rem !important; }
+}
+
+/* Большие телефоны (480–767px) */
 @media (min-width: 480px) {
     .display-4 { font-size: 2rem !important; }
     .jumbotron { padding: 3rem 1.5rem; }
@@ -454,9 +457,9 @@ body {
     .display-4 { font-size: 3.5rem !important; }
 }
 
-/* 320px и ниже — самое маленькое */
+/* Совсем крошечные экраны (до 320px) */
 @media (max-width: 320px) {
-    .display-4 { font-size: 1.4rem !important; }
+    .display-4 { font-size: 1.35rem !important; }
     .turbine-svg { width: 30px; height: 30px; }
 }
 

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог услуг автосервиса Турбо-Мастер: диагностика, ремонт двигателя, шиномонтаж, кузовной ремонт и многое другое.">
+    <meta name="keywords" content="услуги автосервиса, каталог автосервиса, ремонт авто, диагностика, шиномонтаж">
+    <meta name="author" content="Студент">
+    <title>Каталог услуг — Автосервис Турбо-Мастер</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Турбо-Мастер — на главную">
+                <svg class="turbine-svg" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                    <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                    <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+                </svg>
+                <span class="ml-2">Турбо-Мастер</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="catalog.html">Каталог услуг</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            Мои записи
+                            <span class="badge badge-warning ml-1" data-cart-count style="display:none;">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Каталог услуг</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Услуги</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Каталог -->
+    <section class="catalog-section py-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Сайдбар -->
+                <aside class="col-lg-3 mb-4">
+                    <div class="catalog-sidebar">
+                        <div class="filter-block">
+                            <h3 class="filter-title">Категория услуг</h3>
+                            <ul class="filter-list">
+                                <li><a href="#" class="active" data-filter-category="all">Все услуги</a></li>
+                                <li><a href="#" data-filter-category="diagnostics">Диагностика</a></li>
+                                <li><a href="#" data-filter-category="engine">Ремонт двигателя</a></li>
+                                <li><a href="#" data-filter-category="electric">Электрика</a></li>
+                                <li><a href="#" data-filter-category="tires">Шиномонтаж</a></li>
+                                <li><a href="#" data-filter-category="body">Кузовной ремонт</a></li>
+                                <li><a href="#" data-filter-category="paint">Покраска</a></li>
+                                <li><a href="#" data-filter-category="maintenance">ТО и масло</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-block">
+                            <h3 class="filter-title">Тип автомобиля</h3>
+                            <ul class="filter-list">
+                                <li><a href="#" class="active" data-filter-type="all">Все типы</a></li>
+                                <li><a href="#" data-filter-type="passenger">Легковые</a></li>
+                                <li><a href="#" data-filter-type="suv">Внедорожники</a></li>
+                                <li><a href="#" data-filter-type="truck">Грузовые</a></li>
+                                <li><a href="#" data-filter-type="moto">Мототехника</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-block">
+                            <h3 class="filter-title">Цена, ₽</h3>
+                            <div class="price-range">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>0 ₽</span>
+                                    <span id="priceLabel">15 000 ₽</span>
+                                </div>
+                                <input type="range" id="priceRange" class="custom-range" min="0" max="15000" step="500" value="15000" aria-label="Максимальная цена">
+                            </div>
+                        </div>
+
+                        <div class="filter-block filter-actions mb-0 pb-0 border-0">
+                            <button type="button" class="btn btn-warning btn-block" data-filter-reset>Очистить фильтры</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Сетка услуг -->
+                <main class="col-lg-9">
+                    <div class="catalog-toolbar d-flex justify-content-between align-items-center mb-4">
+                        <span class="text-muted small">Найдено услуг: <strong id="resultsCount">9</strong></span>
+                    </div>
+
+                    <div class="row" id="productsGrid">
+
+                        <!-- 1 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="diagnostics" data-type="passenger,suv" data-price="1500">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=diagnostics" class="product-img-wrap">
+                                    <img src="img/diagnostic.png" alt="Компьютерная диагностика" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=diagnostics">Компьютерная диагностика</a></h3>
+                                    <p class="product-price">1 500 ₽</p>
+                                    <a href="service.html?id=diagnostics" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="engine" data-type="passenger,suv,truck" data-price="12000">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=engine" class="product-img-wrap">
+                                    <img src="img/engine.png" alt="Ремонт двигателя" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=engine">Ремонт двигателя</a></h3>
+                                    <p class="product-price">от 12 000 ₽</p>
+                                    <a href="service.html?id=engine" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="electric" data-type="passenger,suv,moto" data-price="3200">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=electric" class="product-img-wrap">
+                                    <img src="img/electric.png" alt="Ремонт электрики" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=electric">Ремонт электрики</a></h3>
+                                    <p class="product-price">3 200 ₽</p>
+                                    <a href="service.html?id=electric" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="tires" data-type="passenger,suv,moto" data-price="2000">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=tires" class="product-img-wrap">
+                                    <img src="img/wheels.png" alt="Шиномонтаж" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=tires">Шиномонтаж</a></h3>
+                                    <p class="product-price">2 000 ₽</p>
+                                    <a href="service.html?id=tires" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 5 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="body" data-type="passenger,suv" data-price="5000">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=body" class="product-img-wrap">
+                                    <img src="img/body.png" alt="Кузовной ремонт" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=body">Кузовной ремонт</a></h3>
+                                    <p class="product-price">от 5 000 ₽</p>
+                                    <a href="service.html?id=body" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 6 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="paint" data-type="passenger,suv" data-price="8000">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=paint" class="product-img-wrap">
+                                    <img src="img/paint.png" alt="Покраска авто" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=paint">Покраска авто</a></h3>
+                                    <p class="product-price">от 8 000 ₽</p>
+                                    <a href="service.html?id=paint" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 7 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="maintenance" data-type="passenger,suv,truck" data-price="800">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=oil" class="product-img-wrap">
+                                    <img src="img/oil.png" alt="Замена масла" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=oil">Замена масла и фильтров</a></h3>
+                                    <p class="product-price">800 ₽</p>
+                                    <a href="service.html?id=oil" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 8 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="electric" data-type="passenger,suv" data-price="4500">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=alarm" class="product-img-wrap">
+                                    <img src="img/signal.png" alt="Установка сигнализации" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=alarm">Установка сигнализации</a></h3>
+                                    <p class="product-price">от 4 500 ₽</p>
+                                    <a href="service.html?id=alarm" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 9 -->
+                        <div class="col-md-4 col-sm-6 mb-4 product-card-wrap" data-category="maintenance" data-type="passenger,suv" data-price="2500">
+                            <article class="card product-card h-100">
+                                <a href="service.html?id=alignment" class="product-img-wrap">
+                                    <img src="img/razval.png" alt="Развал-схождение" loading="lazy" class="card-img-top">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h3 class="product-title"><a href="service.html?id=alignment">Развал-схождение</a></h3>
+                                    <p class="product-price">2 500 ₽</p>
+                                    <a href="service.html?id=alignment" class="btn btn-outline-warning btn-sm btn-block mt-2">Записаться</a>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+
+                    <div id="noResults" class="text-center py-5" style="display:none;">
+                        <h4 class="text-muted">По вашему запросу ничего не найдено 😔</h4>
+                        <p class="text-muted">Попробуйте изменить фильтры или <a href="#" data-filter-reset>сбросить их</a>.</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">
+            <svg class="turbine-svg turbine-svg-sm" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+            </svg>
+            <span class="ml-2">&copy; 2026 Автосервис "Турбо-Мастер". Все права защищены.</span>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Фильтры -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var cards = document.querySelectorAll('.product-card-wrap');
+        var catLinks = document.querySelectorAll('[data-filter-category]');
+        var typeLinks = document.querySelectorAll('[data-filter-type]');
+        var priceRange = document.getElementById('priceRange');
+        var priceLabel = document.getElementById('priceLabel');
+        var resetBtns = document.querySelectorAll('[data-filter-reset]');
+        var resultsCount = document.getElementById('resultsCount');
+        var noResults = document.getElementById('noResults');
+
+        var state = { category: 'all', type: 'all', price: 15000 };
+
+        function apply() {
+            var visible = 0;
+            cards.forEach(function (card) {
+                var cat = card.getAttribute('data-category');
+                var types = card.getAttribute('data-type').split(',');
+                var price = parseInt(card.getAttribute('data-price'), 10);
+                var catOk = state.category === 'all' || cat === state.category;
+                var typeOk = state.type === 'all' || types.indexOf(state.type) !== -1;
+                var priceOk = price <= state.price;
+                if (catOk && typeOk && priceOk) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            resultsCount.textContent = visible;
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        catLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                catLinks.forEach(function (l) { l.classList.remove('active'); });
+                this.classList.add('active');
+                state.category = this.getAttribute('data-filter-category');
+                apply();
+            });
+        });
+
+        typeLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                typeLinks.forEach(function (l) { l.classList.remove('active'); });
+                this.classList.add('active');
+                state.type = this.getAttribute('data-filter-type');
+                apply();
+            });
+        });
+
+        if (priceRange) {
+            priceRange.addEventListener('input', function () {
+                state.price = parseInt(this.value, 10);
+                priceLabel.textContent = state.price.toLocaleString('ru-RU') + ' ₽';
+                apply();
+            });
+        }
+
+        resetBtns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                state = { category: 'all', type: 'all', price: 15000 };
+                catLinks.forEach(function (l) { l.classList.remove('active'); });
+                document.querySelector('[data-filter-category="all"]').classList.add('active');
+                typeLinks.forEach(function (l) { l.classList.remove('active'); });
+                document.querySelector('[data-filter-type="all"]').classList.add('active');
+                if (priceRange) {
+                    priceRange.value = 15000;
+                    priceLabel.textContent = '15 000 ₽';
+                }
+                apply();
+            });
+        });
+    });
+    </script>
+</body>
+</html>

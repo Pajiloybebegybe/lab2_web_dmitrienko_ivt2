@@ -1,4 +1,6 @@
-/* --- Пункт 5.1: Трансформация (увеличение при наведении) --- */
+/* ============================================ */
+/* Пункт 5.1: Трансформация                     */
+/* ============================================ */
 .hover-scale {
     transition: transform 0.4s ease-in-out;
 }
@@ -6,7 +8,7 @@
     transform: scale(1.05);
 }
 
-/* --- Пункт 5.2: Поворот элемента при наведении --- */
+/* Пункт 5.2: Поворот элемента */
 .hover-rotate {
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -14,7 +16,9 @@
     transform: rotate(360deg) scale(1.1);
 }
 
-/* --- Базовые стили --- */
+/* ============================================ */
+/* Базовые стили                                */
+/* ============================================ */
 body {
     font-family: 'Arial', sans-serif;
 }
@@ -22,6 +26,9 @@ body {
 .jumbotron {
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), #343a40;
     border-radius: 0;
+}
+.jumbotron .lead {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .card {
@@ -32,21 +39,13 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-/* --- Контраст текста (для Accessibility) --- */
-/* Bootstrap text-muted слишком светлый, делаем темнее для Lighthouse */
 .text-muted {
     color: #495057 !important;
 }
 
-/* Текст на баннере — добавим лёгкую тень для контраста */
-.jumbotron .lead {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-/* --- Кнопка "Записаться онлайн" --- */
 .btn-warning {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #1a1a1a; /* Более тёмный текст для контраста */
+    color: #1a1a1a;
     font-weight: 600;
 }
 .btn-warning:hover {
@@ -56,33 +55,28 @@ body {
 }
 
 /* ============================================ */
-/* 🌀 SVG-ТУРБИНА (корпус + вращающиеся лопатки) */
+/* 🌀 SVG-ТУРБИНА                               */
 /* ============================================ */
-
 .turbine-svg {
     width: 40px;
     height: 40px;
     color: #ffc107;
     display: inline-block;
     vertical-align: middle;
-    transition: color 0.3s ease;
-}
-
-.turbine-svg-sm {
-    width: 26px;
-    height: 26px;
-}
-
-.turbine-blades {
-    transform-origin: 50% 50%;
-    transform-box: view-box;
     animation: turbineSpin 4s linear infinite;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.turbine-svg.turbine-svg-sm {
+    width: 22px !important;
+    height: 22px !important;
+    animation-duration: 6s;
+    margin: 0;
 }
 
 .navbar-brand:hover .turbine-svg {
     color: #ffffff;
-}
-.navbar-brand:hover .turbine-blades {
     animation-duration: 0.7s;
 }
 
@@ -91,7 +85,9 @@ body {
     to   { transform: rotate(360deg); }
 }
 
-/* --- Галерея работ --- */
+/* ============================================ */
+/* Галерея работ (главная)                      */
+/* ============================================ */
 .work-card {
     cursor: pointer;
     overflow: hidden;
@@ -101,40 +97,360 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-
 .work-card .card-img-top {
+    width: 100%;
     height: 220px;
     object-fit: cover;
+    display: block;
     transition: transform 0.5s ease;
 }
 .work-card:hover .card-img-top {
     transform: scale(1.08);
 }
-
-.work-card .card-body {
-    padding: 1rem;
-}
+.work-card .card-body { padding: 1rem; }
 .work-card .card-title {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.3rem;
 }
 
-/* Плавное появление карточек галереи */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-.work-card {
-    animation: fadeInUp 0.6s ease forwards;
+.work-card { animation: fadeInUp 0.6s ease forwards; }
+
+/* ============================================ */
+/* 📦 СТРАНИЦА КАТАЛОГА                         */
+/* ============================================ */
+.page-header {
+    background: #f8f9fa;
+    padding: 30px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffc107;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.breadcrumb-item a {
+    color: #6c757d;
+    text-decoration: none;
+}
+.breadcrumb-item a:hover { color: #ffc107; }
+
+.filter-block {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+.filter-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    position: relative;
+    padding-left: 15px;
+}
+.filter-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 4px;
+    height: 16px;
+    background: #ffc107;
+    border-radius: 2px;
+}
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.filter-list li { margin-bottom: 6px; }
+.filter-list a {
+    color: #495057;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 4px 0;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.filter-list a:hover,
+.filter-list a.active {
+    color: #ffc107;
+    padding-left: 6px;
+    font-weight: 600;
 }
 
-/* --- Адаптивность --- */
+.catalog-toolbar {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+}
+.sort-select {
+    width: auto;
+    min-width: 180px;
+}
 
+.product-card {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+.product-img-wrap {
+    display: block;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+.product-card .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .card-img-top {
+    transform: scale(1.06);
+}
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+.product-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.product-title a:hover { color: #ffc107; }
+.product-price {
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+.btn-outline-warning {
+    color: #b8860b;
+    border-color: #ffc107;
+    transition: all 0.3s ease;
+}
+.btn-outline-warning:hover {
+    background: #ffc107;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.features-bar { background: #1a1a1a !important; }
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    color: #ffc107;
+    display: block;
+    margin: 0 auto;
+}
+.features-bar h3 { color: #ffffff; }
+.features-bar .text-muted { color: #adb5bd !important; }
+
+/* ============================================ */
+/* 🛎️ СТРАНИЦА УСЛУГИ                          */
+/* ============================================ */
+#serviceBlock img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 6px;
+}
+.service-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+/* ============================================ */
+/* 🛒 КОРЗИНА / МОИ ЗАПИСИ                     */
+/* ============================================ */
+.cart-table {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.cart-table thead th {
+    background: #f8f9fa;
+    border-top: none;
+    border-bottom: 2px solid #e9ecef;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    padding: 15px;
+}
+.cart-table td {
+    vertical-align: middle;
+    padding: 15px;
+}
+.cart-thumb {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.cart-summary {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    position: sticky;
+    top: 100px;
+}
+
+.navbar .badge-warning {
+    background: #ffc107;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* ============================================ */
+/* 🔔 TOAST-УВЕДОМЛЕНИЕ                         */
+/* ============================================ */
+.cart-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1a1a1a;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 9999;
+    pointer-events: none;
+}
+.cart-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================ */
+/* 📝 ВАЛИДАЦИЯ ФОРМ                            */
+/* ============================================ */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+.invalid-feedback {
+    display: none;
+    font-size: 0.85rem;
+    color: #dc3545;
+    margin-top: 4px;
+}
+.form-control.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* ============================================ */
+/* 👤 СТРАНИЦА "О НАС"                          */
+/* ============================================ */
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffc107;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.stat-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.author-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ffc107;
+    color: #1a1a1a;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+.advantage-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b8860b;
+}
+.advantage-icon svg {
+    width: 28px;
+    height: 28px;
+}
+.bg-dark a.text-white:hover {
+    color: #ffc107 !important;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 📱 АДАПТИВНОСТЬ                              */
+/* ============================================ */
 @media (max-width: 320px) {
     .display-4 { font-size: 1.8rem; }
     .jumbotron { padding: 2rem 1rem; }
     .turbine-svg { width: 30px; height: 30px; }
+}
+
+@media (max-width: 767px) {
+    .page-title { font-size: 1.4rem; }
+    .catalog-sidebar { margin-bottom: 20px; }
+    .product-card .card-img-top { height: 200px; }
+    .work-card .card-img-top { height: 200px; }
+    .service-title { font-size: 1.4rem; }
+    .service-price { font-size: 1.4rem; }
+    .checkout-summary { position: static; }
+    .cart-thumb { width: 50px; height: 40px; }
+
+    .cart-table thead { display: none; }
+    .cart-table tbody tr {
+        display: block;
+        border-bottom: 1px solid #e9ecef;
+        padding: 12px 0;
+    }
+    .cart-table tbody td {
+        display: block;
+        text-align: right !important;
+        padding: 4px 0;
+        border: none;
+    }
+    .cart-table tbody td:first-child {
+        text-align: left !important;
+    }
 }
 
 @media (min-width: 768px) {

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Оформление записи в автосервис Турбо-Мастер. Заполните контактные данные и подтвердите запись.">
+    <meta name="keywords" content="оформление записи, автосервис, запись онлайн">
+    <meta name="author" content="Студент">
+    <title>Оформление записи — Турбо-Мастер</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Турбо-Мастер — на главную">
+                <svg class="turbine-svg" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                    <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                    <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+                </svg>
+                <span class="ml-2">Турбо-Мастер</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог услуг</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#gallery">Работы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Мои записи <span class="badge badge-warning cart-count">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Оформление записи</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="cart.html">Мои записи</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Оформление</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Оформление -->
+    <section class="checkout-section py-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Форма -->
+                <div class="col-lg-8 mb-4">
+                    <form id="checkoutForm">
+
+                        <!-- Шаг 1. Контактные данные -->
+                        <div class="checkout-step">
+                            <h2 class="checkout-step-title"><span>01.</span> Контактные данные</h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="coName">Имя и фамилия *</label>
+                                    <input type="text" id="coName" class="form-control" placeholder="Иван Иванов" required minlength="2">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coPhone">Телефон *</label>
+                                    <input type="tel" id="coPhone" class="form-control" placeholder="+7 (999) 123-45-67"
+                                           pattern="^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coEmail">Email *</label>
+                                    <input type="email" id="coEmail" class="form-control" placeholder="ivan@example.com" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coCity">Город</label>
+                                    <input type="text" id="coCity" class="form-control" placeholder="Москва">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Шаг 2. Информация об авто -->
+                        <div class="checkout-step">
+                            <h2 class="checkout-step-title"><span>02.</span> Информация об автомобиле</h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="coBrand">Марка *</label>
+                                    <input type="text" id="coBrand" class="form-control" placeholder="Toyota" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coModel">Модель *</label>
+                                    <input type="text" id="coModel" class="form-control" placeholder="Camry" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="coYear">Год выпуска</label>
+                                    <input type="number" id="coYear" class="form-control" placeholder="2020" min="1950" max="2026">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="coPlate">Гос. номер</label>
+                                    <input type="text" id="coPlate" class="form-control" placeholder="А123БВ777">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="coMileage">Пробег, км</label>
+                                    <input type="number" id="coMileage" class="form-control" placeholder="50000" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Шаг 3. Дата и время -->
+                        <div class="checkout-step">
+                            <h2 class="checkout-step-title"><span>03.</span> Дата и время визита</h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="coDate">Дата *</label>
+                                    <input type="date" id="coDate" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coTime">Время *</label>
+                                    <select id="coTime" class="form-control" required>
+                                        <option value="">Выберите время</option>
+                                        <option>09:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>13:00</option>
+                                        <option>15:00</option>
+                                        <option>17:00</option>
+                                        <option>19:00</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="coComment">Комментарий к записи</label>
+                                    <textarea id="coComment" class="form-control" rows="3" placeholder="Опишите проблему или пожелания..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Шаг 4. Способ оплаты -->
+                        <div class="checkout-step">
+                            <h2 class="checkout-step-title"><span>04.</span> Способ оплаты</h2>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cash" checked>
+                                    <span>Наличными в сервисе</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card">
+                                    <span>Картой в сервисе</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="online">
+                                    <span>Онлайн-оплата (ссылка на почту)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Шаг 5. Согласие и кнопка -->
+                        <div class="checkout-step mb-0">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="coAgree" required>
+                                <label class="custom-control-label" for="coAgree">
+                                    Я согласен на обработку персональных данных *
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-warning btn-lg btn-block">
+                                Подтвердить запись
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Резюме -->
+                <div class="col-lg-4">
+                    <div class="checkout-summary">
+                        <h3 class="h5 mb-3">Ваша запись</h3>
+                        <div id="checkoutSummaryList">
+                            <!-- JS заполнит -->
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Подитог:</span>
+                            <span id="checkoutSubtotal">0 ₽</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 text-success">
+                            <span>Скидка 10%:</span>
+                            <span id="checkoutDiscount">− 0 ₽</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>ИТОГО:</strong>
+                            <strong class="cart-total" id="checkoutTotal">0 ₽</strong>
+                        </div>
+                        <p class="text-muted small mb-0">
+                            Оплата производится после оказания услуги в сервисе.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модалка "Спасибо" -->
+    <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" class="mb-3">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <h3 class="h4 mb-2">Запись оформлена!</h3>
+                    <p class="text-muted mb-3">Мы позвоним вам в течение 15 минут для подтверждения.</p>
+                    <a href="index.html" class="btn btn-warning">На главную</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0 d-flex justify-content-center align-items-center">
+            <svg class="turbine-svg turbine-svg-sm" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+            </svg>
+            <span class="ml-2">&copy; 2026 Автосервис "Турбо-Мастер". Все права защищены.</span>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

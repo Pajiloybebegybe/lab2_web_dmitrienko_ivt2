@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="О нас — автосервис Турбо-Мастер. История, миссия и команда профессионалов.">
+    <meta name="keywords" content="о нас, автосервис, турбо-мастер, о компании, команда">
+    <meta name="author" content="Студент">
+    <title>О нас — Автосервис Турбо-Мастер</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* Защитный слой — гарантирует правильные цвета и позицию меню */
+.navbar .navbar-nav { margin-left: auto !important; }
+.navbar .navbar-nav .nav-link { color: rgba(255,255,255,0.75) !important; padding: 8px 16px !important; }
+.navbar .navbar-nav .nav-link:hover { color: #ffc107 !important; }
+.navbar .navbar-nav .nav-item.active .nav-link { color: #fff !important; font-weight: 600; }
+</style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Турбо-Мастер — на главную">
+                <svg class="turbine-svg" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                    <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                    <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+                </svg>
+                <span class="ml-2">Турбо-Мастер</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог услуг</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            Мои записи
+                            <span class="badge badge-warning ml-1" data-cart-count style="display:none;">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active"><a class="nav-link" href="about.html">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">О нас</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">О нас</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/service.png" alt="Автосервис Турбо-Мастер" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="h3 mb-3">Автосервис «Турбо-Мастер»</h2>
+                    <p class="text-muted">
+                        Мы — команда профессионалов, которая с 2015 года помогает автовладельцам
+                        держать свои машины в отличной форме. За это время мы отремонтировали
+                        более 5 000 автомобилей и заслужили доверие тысяч клиентов.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Наш подход прост: <strong>честные цены, качественные запчасти и гарантия на все работы</strong>.
+                        Мы не берём денег за то, что не сделали, и всегда объясняем, что и зачем ремонтируем.
+                    </p>
+
+                    <div class="row text-center mt-4">
+                        <div class="col-4">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">лет опыта</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">5K+</div>
+                            <div class="stat-label">машин отремонтировано</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">довольных клиентов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Об авторе сайта -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="h3 text-center mb-5">Об авторе сайта</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center mb-3 mb-md-0">
+                                    <div class="author-avatar mx-auto">А</div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h3 class="h5 mb-2">Студент</h3>
+                                    <p class="text-muted small mb-2">Веб-разработчик · Учебный проект</p>
+                                    <p class="mb-0">
+                                        Этот сайт создан в рамках лабораторной работы №2 по теме
+                                        «Вёрстка сайта по макету. Адаптивная вёрстка». В процессе работы
+                                        я освоил Bootstrap 4, адаптивную вёрстку, CSS-анимации,
+                                        localStorage и валидацию форм.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Почему мы -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="h3 text-center mb-5">Почему выбирают нас</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="advantage-icon mx-auto mb-3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 mb-2">Опытные мастера</h3>
+                        <p class="text-muted small">Все специалисты имеют профильное образование и опыт работы от 5 лет.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="advantage-icon mx-auto mb-3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 mb-2">Работаем быстро</h3>
+                        <p class="text-muted small">Большинство работ выполняем в день обращения, без задержек.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="advantage-icon mx-auto mb-3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 mb-2">Гарантия качества</h3>
+                        <p class="text-muted small">Даём гарантию от 6 месяцев на все выполненные работы и запчасти.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="h3 text-center mb-5">Свяжитесь с нами</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h3 class="h6 text-warning text-uppercase mb-2">Адрес</h3>
+                    <p class="mb-0">г. Донецк, ул. Театральная, 31А</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h3 class="h6 text-warning text-uppercase mb-2">Телефон</h3>
+                    <p class="mb-0">
+                        <a href="tel:+79496067314" class="text-white">+7 (949) 606-73-14</a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3 class="h6 text-warning text-uppercase mb-2">Режим работы</h3>
+                    <p class="mb-0">Ежедневно с 09:00 до 20:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-3 border-top border-secondary">
+        <p class="mb-0">
+            <svg class="turbine-svg turbine-svg-sm" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+            </svg>
+            <span class="ml-2">&copy; 2026 Автосервис "Турбо-Мастер". Все права защищены.</span>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

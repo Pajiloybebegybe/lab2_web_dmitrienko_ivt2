@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Запись на услугу автосервиса Турбо-Мастер: выберите дату и время.">
+    <meta name="author" content="Студент">
+    <title>Запись на услугу — Автосервис Турбо-Мастер</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* Защитный слой — гарантирует правильные цвета и позицию меню */
+.navbar .navbar-nav { margin-left: auto !important; }
+.navbar .navbar-nav .nav-link { color: rgba(255,255,255,0.75) !important; padding: 8px 16px !important; }
+.navbar .navbar-nav .nav-link:hover { color: #ffc107 !important; }
+.navbar .navbar-nav .nav-item.active .nav-link { color: #fff !important; font-weight: 600; }
+</style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Турбо-Мастер — на главную">
+                <svg class="turbine-svg" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                    <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                    <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                    <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+                </svg>
+                <span class="ml-2">Турбо-Мастер</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+<li class="nav-item active"><a class="nav-link" href="catalog.html">Каталог услуг</a></li>
+<li class="nav-item">
+    <a class="nav-link" href="cart.html">
+        Мои записи
+        <span class="badge badge-warning ml-1" data-cart-count style="display:none;">0</span>
+    </a>
+</li>
+<li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок -->
+    <section class="page-header">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent p-0 mb-2">
+                    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="catalog.html">Услуги</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="bcTitle">Услуга</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Контент услуги -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="serviceBlock" style="display:none;">
+
+                <!-- Фото -->
+                <div class="col-md-6 mb-4">
+                    <img id="serviceImg" src="" alt="" class="img-fluid rounded shadow-sm w-100">
+                </div>
+
+                <!-- Инфо + форма -->
+                <div class="col-md-6">
+                    <h1 class="h2 mb-3" id="serviceTitle"></h1>
+                    <p class="text-muted" id="serviceDesc"></p>
+                    <p class="h3 text-warning mb-4" id="servicePrice"></p>
+
+                    <hr>
+
+                    <h2 class="h5 mb-3">Выберите дату и время записи</h2>
+
+                    <form id="bookingForm" novalidate>
+                        <!-- Дата -->
+                        <div class="form-group">
+                            <label for="bookDate">Дата <span class="text-danger">*</span></label>
+                            <input type="date" id="bookDate" class="form-control" required>
+                            <div class="invalid-feedback">Пожалуйста, выберите дату записи</div>
+                        </div>
+
+                        <!-- Время -->
+                        <div class="form-group">
+                            <label for="bookTime">Время <span class="text-danger">*</span></label>
+                            <input type="time" id="bookTime" class="form-control" required min="09:00" max="20:00">
+                            <div class="invalid-feedback">Пожалуйста, выберите время (с 09:00 до 20:00)</div>
+                        </div>
+
+                        <!-- Имя -->
+                        <div class="form-group">
+                            <label for="bookName">Ваше имя <span class="text-danger">*</span></label>
+                            <input type="text" id="bookName" class="form-control" placeholder="Иван" required minlength="2">
+                            <div class="invalid-feedback">Введите имя (минимум 2 символа)</div>
+                        </div>
+
+                        <!-- Телефон -->
+                        <div class="form-group">
+                            <label for="bookPhone">Телефон <span class="text-danger">*</span></label>
+                            <input type="tel" id="bookPhone" class="form-control" placeholder="+7 (999) 123-45-67" required pattern="^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$">
+                            <div class="invalid-feedback">Введите телефон в формате +7 (999) 123-45-67</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning btn-lg btn-block mt-4">Записаться на услугу</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Если услуга не найдена -->
+            <div id="notFound" class="text-center py-5" style="display:none;">
+                <h2 class="text-muted mb-3">Услуга не найдена 😔</h2>
+                <p class="text-muted mb-4">Возможно, ссылка устарела или услуга была удалена.</p>
+                <a href="catalog.html" class="btn btn-warning btn-lg">Вернуться в каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">
+            <svg class="turbine-svg turbine-svg-sm" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(0 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(45 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(90 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(135 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(180 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(225 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(270 50 50)"/>
+                <path d="M50,50 L45,20 Q50,15 55,20 Z" fill="currentColor" opacity="0.9" transform="rotate(315 50 50)"/>
+                <circle cx="50" cy="50" r="9" fill="currentColor"/>
+                <circle cx="50" cy="50" r="4" fill="#1a1a1a"/>
+            </svg>
+            <span class="ml-2">&copy; 2026 Автосервис "Турбо-Мастер". Все права защищены.</span>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+
+    <script>
+    /* 📚 База услуг — все данные в одном месте */
+    var SERVICES = {
+        diagnostics: {
+            title: 'Компьютерная диагностика',
+            desc: 'Полное сканирование всех систем автомобиля: двигатель, АКПП, ABS, подушки безопасности и электроника. По результатам выдаём распечатку ошибок и рекомендации.',
+            price: 1500,
+            img: 'img/diagnostic.png'
+        },
+        engine: {
+            title: 'Ремонт двигателя',
+            desc: 'Капитальный и текущий ремонт ДВС любой сложности. Замена ремней, цепей, прокладок, клапанов. Диагностика и устранение стуков.',
+            price: 12000,
+            img: 'img/engine.png'
+        },
+        electric: {
+            title: 'Ремонт электрики',
+            desc: 'Диагностика и восстановление бортовой сети. Ремонт генератора, стартера, проводки, замена датчиков.',
+            price: 3200,
+            img: 'img/electric.png'
+        },
+        tires: {
+            title: 'Шиномонтаж',
+            desc: 'Сезонная смена шин, балансировка колёс, ремонт проколов, подкачка азотом. Работаем с любыми диаметрами.',
+            price: 2000,
+            img: 'img/wheels.png'
+        },
+        body: {
+            title: 'Кузовной ремонт',
+            desc: 'Устранение вмятин, сварка, рихтовка, замена кузовных элементов. Работаем со всеми марками авто.',
+            price: 5000,
+            img: 'img/body.png'
+        },
+        paint: {
+            title: 'Покраска авто',
+            desc: 'Полная или локальная покраска с компьютерным подбором цвета. Покрасочная камера, итальянские материалы.',
+            price: 8000,
+            img: 'img/paint.png'
+        },
+        oil: {
+            title: 'Замена масла и фильтров',
+            desc: 'Быстрая замена моторного масла, масляного, воздушного и салонного фильтров. Только оригинальные расходники.',
+            price: 800,
+            img: 'img/oil.png'
+        },
+        alarm: {
+            title: 'Установка сигнализации',
+            desc: 'Установка и настройка охранных систем с автозапуском. Гарантия на работы и оборудование.',
+            price: 4500,
+            img: 'img/signal.png'
+        },
+        alignment: {
+            title: 'Развал-схождение',
+            desc: 'Регулировка углов установки колёс на 3D-стенде. Улучшает управляемость и снижает износ шин.',
+            price: 2500,
+            img: 'img/razval.png'
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get('id');
+        var service = SERVICES[id];
+
+        if (!service) {
+            document.getElementById('notFound').style.display = 'block';
+            return;
+        }
+
+        document.getElementById('serviceBlock').style.display = '';
+        document.getElementById('serviceTitle').textContent = service.title;
+        document.getElementById('serviceDesc').textContent = service.desc;
+        document.getElementById('servicePrice').textContent = service.price.toLocaleString('ru-RU') + ' ₽';
+        document.getElementById('serviceImg').src = service.img;
+        document.getElementById('serviceImg').alt = service.title;
+        document.getElementById('bcTitle').textContent = service.title;
+        document.title = service.title + ' — Автосервис Турбо-Мастер';
+
+        /* Минимальная дата — сегодня */
+        var today = new Date().toISOString().split('T')[0];
+        var dateInput = document.getElementById('bookDate');
+        dateInput.min = today;
+
+        /* 📝 Обработка формы с валидацией */
+        var form = document.getElementById('bookingForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var date = document.getElementById('bookDate');
+            var time = document.getElementById('bookTime');
+            var name = document.getElementById('bookName');
+            var phone = document.getElementById('bookPhone');
+            var valid = true;
+
+            [date, time, name, phone].forEach(function (field) {
+                if (!field.checkValidity()) {
+                    field.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+
+            if (!valid) {
+                showToast('⚠ Заполните все поля корректно');
+                return;
+            }
+
+            /* Проверка времени: 09:00–20:00 */
+            if (time.value < '09:00' || time.value > '20:00') {
+                time.classList.add('is-invalid');
+                showToast('⚠ Время работы: с 09:00 до 20:00');
+                return;
+            }
+
+            /* Форматируем дату для отображения */
+            var d = new Date(date.value);
+            var dateStr = d.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+            /* Уникальный ID для записи: id_дата_время */
+            var bookingId = id + '_' + date.value + '_' + time.value.replace(':', '');
+
+            var item = {
+                id: bookingId,
+                serviceId: id,
+                title: service.title,
+                price: service.price,
+                img: service.img,
+                date: dateStr,
+                time: time.value,
+                name: name.value,
+                phone: phone.value
+            };
+
+            addToCart(item);
+            showToast('✓ Запись оформлена! Переходим в «Мои записи»...');
+
+            setTimeout(function () {
+                window.location.href = 'cart.html';
+            }, 1200);
+        });
+
+        /* Убираем красную рамку при вводе */
+        form.querySelectorAll('input').forEach(function (input) {
+            input.addEventListener('input', function () {
+                if (this.checkValidity()) {
+                    this.classList.remove('is-invalid');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
